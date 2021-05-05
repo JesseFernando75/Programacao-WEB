@@ -2,4 +2,4 @@
 
 Exercícios de Programação WEB.
 
-Casa exercício encontra-se em uma branch com sua identificação - ASAE#.
+Cada exercício encontra-se em uma branch com sua identificação - ASAE#.
