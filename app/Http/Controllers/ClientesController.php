@@ -27,17 +27,37 @@ class ClientesController extends Controller
 		$c1->cep = $cep;
 
 		$c1->save();
+		session()->flash("Mensagem", "O cliente {$c1->nome} foi cadastrado com sucesso.");
 		return redirect()->route('lista_clientes');
 	}
 
+	function mostraTelaCadastroCliente(){
+    	if(session()->has('login')){
+    		return view('form');
+    	} else{
+    		session()->flash("Retorno", "Faça o login para acessar esta página.");
+    		return redirect()->route('login');
+    	}
+    }
+
 	function obtemListaClientes(){
-		$cliente = Cliente::all();
-		return view('listacliente', ['cliente' => $cliente]);
+		if(session()->has('login')){
+			$cliente = Cliente::all();
+			return view('listacliente', ['cliente' => $cliente]);
+		} else{
+    		session()->flash("Retorno", "Faça o login para acessar esta página.");
+    		return redirect()->route('login');
+    	}
 	}
 
 	function editaCliente($id){
-		$cliente = Cliente::find($id);
-		return view('editarcliente', ['v' => $cliente]);
+		if(session()->has('login')){
+			$cliente = Cliente::find($id);
+			return view('editarcliente', ['v' => $cliente]);
+		} else{
+    		session()->flash("Retorno", "Faça o login para acessar esta página.");
+    		return redirect()->route('login');
+    	}
 	}
 
 	function editar(Request $request, $id){
@@ -52,6 +72,7 @@ class ClientesController extends Controller
 		$cliente->cep = $request->input('cep');
 
 		$cliente->save();
+		session()->flash("Mensagem", "O cliente {$cliente->nome} foi alterado com sucesso.");
 		return redirect()->route('lista_clientes');	
 	}
 
@@ -59,6 +80,7 @@ class ClientesController extends Controller
 		$cliente = Cliente::findOrFail($id);
 
 		$cliente->delete();
+		session()->flash("Mensagem", "Excluído com sucesso.");
 		return redirect()->route('lista_clientes');	
 	}
 }

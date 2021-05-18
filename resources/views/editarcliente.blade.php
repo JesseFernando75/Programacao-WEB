@@ -1,5 +1,6 @@
 @extends('template')
 
+	@routes
 	@section('title') Editar cliente @endsection
 
 	@section('nav&footer')
@@ -72,9 +73,10 @@
 				    <input type="number" name="cep" class="form-control" placeholder="89000000" min="11111111" max="99999999" value="{{ $v->cep }}" required>
 				  </div>
 
-				  <button class="btn btn-light mt-4 mb-5" type="submit">Editar</button>
+				  <button class="btn btn-light mt-4 mb-5" type="submit">Editar</button> 
 				</form>	
 			</div>
 		</div>
 		<!-- Fim formulário -->
+		
 	@endsection
