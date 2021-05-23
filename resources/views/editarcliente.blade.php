@@ -38,33 +38,33 @@
 				  <div class="mb-3">
 				    <label class="form-label">Estado</label>
 				    <select name="estado" class="form-control" placeholder="Escolha o estado:" value="{{ $v->estado }}" required>
-					  <option value="AC">Acre</option>
-					  <option value="AL">Alagoas</option>
-					  <option value="AP">Amapá</option>
-					  <option value="AM">Amazonas</option>
-					  <option value="BA">Bahia</option>
-					  <option value="CE">Ceará</option>
-					  <option value="DF">Distrito Federal</option>
-					  <option value="ES">Espírito Santo</option>
-					  <option value="GO">Goiás</option>
-					  <option value="MA">Maranhão</option>
-					  <option value="MT">Mato Grosso</option>
-					  <option value="MS">Mato Grosso do Sul</option>
-					  <option value="MG">Minas Gerais</option>
-					  <option value="PA">Pará</option>
-					  <option value="PB">Paraíba</option>
-					  <option value="PR">Paraná</option>
-					  <option value="PE">Pernambuco</option>
-					  <option value="PI">Piauí</option>
-					  <option value="RJ">Rio de Janeiro</option>
-					  <option value="RN">Rio Grande do Norte</option>
-					  <option value="RS">Rio Grande do Sul</option>
-					  <option value="RO">Rondônia</option>
-					  <option value="RR">Roraima</option>
-					  <option value="SC">Santa Catarina</option>
-					  <option value="SP">São Paulo</option>
-					  <option value="SE">Sergipe</option>
-					  <option value="TO">Tocantins</option>
+					  <option value="AC" {{ 'AC' == $v->estado ? "selected" : ""}}>Acre</option>
+					  <option value="AL" {{ 'AL' == $v->estado ? "selected" : ""}}>Alagoas</option>
+					  <option value="AP" {{ 'AP' == $v->estado ? "selected" : ""}}>Amapá</option>
+					  <option value="AM" {{ 'AM' == $v->estado ? "selected" : ""}}>Amazonas</option>
+					  <option value="BA" {{ 'BA' == $v->estado ? "selected" : ""}}>Bahia</option>
+					  <option value="CE" {{ 'CE' == $v->estado ? "selected" : ""}}>Ceará</option>
+					  <option value="DF" {{ 'DF' == $v->estado ? "selected" : ""}}>Distrito Federal</option>
+					  <option value="ES" {{ 'ES' == $v->estado ? "selected" : ""}}>Espírito Santo</option>
+					  <option value="GO" {{ 'GO' == $v->estado ? "selected" : ""}}>Goiás</option>
+					  <option value="MA" {{ 'MA' == $v->estado ? "selected" : ""}}>Maranhão</option>
+					  <option value="MT" {{ 'MT' == $v->estado ? "selected" : ""}}>Mato Grosso</option>
+					  <option value="MS" {{ 'MS' == $v->estado ? "selected" : ""}}>Mato Grosso do Sul</option>
+					  <option value="MG" {{ 'MG' == $v->estado ? "selected" : ""}}>Minas Gerais</option>
+					  <option value="PA" {{ 'PA' == $v->estado ? "selected" : ""}}>Pará</option>
+					  <option value="PB" {{ 'PB' == $v->estado ? "selected" : ""}}>Paraíba</option>
+					  <option value="PR" {{ 'PR' == $v->estado ? "selected" : ""}}>Paraná</option>
+					  <option value="PE" {{ 'PE' == $v->estado ? "selected" : ""}}>Pernambuco</option>
+					  <option value="PI" {{ 'PI' == $v->estado ? "selected" : ""}}>Piauí</option>
+					  <option value="RJ" {{ 'RJ' == $v->estado ? "selected" : ""}}>Rio de Janeiro</option>
+					  <option value="RN" {{ 'RN' == $v->estado ? "selected" : ""}}>Rio Grande do Norte</option>
+					  <option value="RS" {{ 'RS' == $v->estado ? "selected" : ""}}>Rio Grande do Sul</option>
+					  <option value="RO" {{ 'RO' == $v->estado ? "selected" : ""}}>Rondônia</option>
+					  <option value="RR" {{ 'RR' == $v->estado ? "selected" : ""}}>Roraima</option>
+					  <option value="SC" {{ 'SC' == $v->estado ? "selected" : ""}}>Santa Catarina</option>
+					  <option value="SP" {{ 'SP' == $v->estado ? "selected" : ""}}>São Paulo</option>
+					  <option value="SE" {{ 'SE' == $v->estado ? "selected" : ""}}>Sergipe</option>
+					  <option value="TO" {{ 'TO' == $v->estado ? "selected" : ""}}>Tocantins</option>
 					</select>
 				  </div>
 

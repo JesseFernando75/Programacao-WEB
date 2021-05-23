@@ -38,11 +38,11 @@
 				    </tr>
 				  </thead>
 				  <tbody>
-				      @foreach($cliente->compras as $v)
+				      @foreach($compras as $v)
 				      	<tr class="text-light">
 					      	<td>{{ $v->id }}</td>
-					      	<td>{{ $cliente->id }}</td>
-					      	<td>{{ $cliente->nome }}</td>
+					      	<td>{{ $v->id_cliente }}</td>
+					      	<td>{{ $v->cliente->nome }}</td>
 					      	<td>{{ $v->data }}</td>
 					      	<td>{{ $v->valor_final }}</td>
 					      	<td>

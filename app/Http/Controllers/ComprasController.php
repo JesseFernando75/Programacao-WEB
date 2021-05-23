@@ -9,13 +9,15 @@ use App\Models\Cliente;
 class ComprasController extends Controller
 {
    function obtemComprasCliente($id){
-		if(session()->has('login')){
-			$cliente = Cliente::find($id);
-			return view('comprascliente', ['cliente' => $cliente]);
+		$cliente = Cliente::find($id);
+		$compras = $cliente->compras;
+
+		if(sizeof($compras) == 0){
+			session()->flash("Retorno", "O cliente $cliente->nome não possuí nenhuma compra.");
+			return redirect()->route('lista_clientes');
 		} else{
-    		session()->flash("Retorno", "Faça o login para acessar esta página.");
-    		return redirect()->route('login');
-    	}
+			return view('comprascliente', ['compras' => $compras]);
+		}
 	}
 
 	function cadastrarCompra(Request $request, $id){
@@ -32,22 +34,12 @@ class ComprasController extends Controller
 	}
 
 	function mostraTelaCadastroCompra($id){
-    	if(session()->has('login')){
-    		return view('cadastrarcompra', ['id' => $id]);
-    	} else{
-    		session()->flash("Retorno", "Faça o login para acessar esta página.");
-    		return redirect()->route('login');
-    	}
+    	return view('cadastrarcompra', ['id' => $id]);
     }
 
 	function editaCompra($id){
-		if(session()->has('login')){
-			$compra = Compras::find($id);
-			return view('editarcompra', ['v' => $compra]);
-		} else{
-    		session()->flash("Retorno", "Faça o login para acessar esta página.");
-    		return redirect()->route('login');
-    	}
+		$compra = Compras::find($id);
+		return view('editarcompra', ['v' => $compra]);
 	}
 
 	function editarCompra(Request $request, $id){

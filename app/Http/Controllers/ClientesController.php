@@ -32,32 +32,17 @@ class ClientesController extends Controller
 	}
 
 	function mostraTelaCadastroCliente(){
-    	if(session()->has('login')){
-    		return view('form');
-    	} else{
-    		session()->flash("Retorno", "Faça o login para acessar esta página.");
-    		return redirect()->route('login');
-    	}
+    	return view('form');
     }
 
 	function obtemListaClientes(){
-		if(session()->has('login')){
-			$cliente = Cliente::all();
-			return view('listacliente', ['cliente' => $cliente]);
-		} else{
-    		session()->flash("Retorno", "Faça o login para acessar esta página.");
-    		return redirect()->route('login');
-    	}
+		$cliente = Cliente::all();
+		return view('listacliente', ['cliente' => $cliente]);
 	}
 
 	function editaCliente($id){
-		if(session()->has('login')){
-			$cliente = Cliente::find($id);
-			return view('editarcliente', ['v' => $cliente]);
-		} else{
-    		session()->flash("Retorno", "Faça o login para acessar esta página.");
-    		return redirect()->route('login');
-    	}
+		$cliente = Cliente::find($id);
+		return view('editarcliente', ['v' => $cliente]);
 	}
 
 	function editar(Request $request, $id){

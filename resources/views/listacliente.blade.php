@@ -21,6 +21,14 @@
 				</div>
 			</div>
 		@endif
+
+		@if(session('Retorno'))
+			<div class="row">
+				<div class="alert alert-danger text-center py-3">
+					{{ session('Retorno') }}
+				</div>
+			</div>
+		@endif
 	<!-- Fim mensagem alterar -->
 
 	  	<!-- Início tabela -->

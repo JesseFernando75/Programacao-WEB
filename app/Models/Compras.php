@@ -13,4 +13,8 @@ class Compras extends Model
 
     protected $table = 'compras';
 
+    function cliente(){
+    	return $this->hasOne(Cliente::class, 'id', 'id_cliente');
+    }
+
 }
